@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Заливка картинки</title>
+  <style>
+
+    body, html {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .i2, .i0, .i1, .i7 {
+        position: relative;
+        opacity: 1;
+    }
+    
+    .i0, .i1, .i2, .i7 {
+        transition: transform .3s ease-in, opacity .3s ease-in;
+    }
+
+    .i1 {
+        transition-delay: .2s;
+    }
+
+    .i2 {
+        transition-delay: .5s;
+    }
+    
+    .i7 {
+        transition-delay: .7s;
+    }
+
+    .i0 {
+        transform: rotateX(90deg);
+        transform-origin: 50% 50%;
+    }
+    
+    .i2 {
+        transform: rotateY(-90deg);
+        transform-origin: 100% 50%;
+    }
+
+    .i1 {
+        transform: rotateY(90deg);
+        transform-origin: 0% 50%;
+    }
+
+    .i7 {
+        transform: rotateY(90deg);
+        transform-origin: 0% 50%;
+    }
+    
+    body.next .i2 {
+        opacity: 1;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+    }
+    
+    body.next .i1 {
+        opacity: 1;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+    }
+
+    body.next .i0 {
+        opacity: 1;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+    }
+
+    body.next .i7 {
+        opacity: 1;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+    }
+  </style>
+  
+</head>
+<body>
+    <div class="container" style="position: absolute; left: 50%; width: 800px; margin-left: -400px; top: 200px;">
+        <img class="i2" src="2.png" /><img class="i0" src="0.png" /><img class="i1" src="1.png" /><img class="i7" src="7.png" />
+    </div>
+    <script>
+    setTimeout(function() {
+        document.body.classList.add('next');
+    }, 100);
+    </script>
+</body>
+</html>
